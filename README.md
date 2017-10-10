@@ -1,2 +1,2 @@
 # SDC1-DetectLaneLines
-Detect Lane Lines from a mp4 Video Stream
+Detect Road Lane Lines from a mp4 Video Stream
