@@ -14,7 +14,7 @@ The goals / steps of this project are the following:
 
 [image1]: ./test_images_output/test_region_area.png "REGION OF INTEREST"
 [image2]: ./test_images_output/solidYellowCurve2_out.png "LANE DETECTION"
-
+[image3]: ./test_images_output/test.png "LANE DETECTION"
 
 ---
 
@@ -28,17 +28,20 @@ My pipeline consisted of 5 steps :
 - For each image, I first converted it to grayscale
 - Performed gaussian blur
 - Did Canny Edge detection
-- Assign values to vertices for Region of interest
-![alt text][image1]
+- Assigned values to vertices for Region of interest
 - Apply Hough Transformation on the Region of interest
 - Tweaked the values of kernel size, rho, theta, threshold, min_line_len, max_line_gap (Resultant lines were continous and long)
 - Got an image with lanes drawn on it after calling Hough Transformation
 
 	-  First with normal draw lines
+
+![alt text][image1]
 	-  Then with improved draw lines (draw one single thick line from bottom till center after avg/ extrapolating to detect lane) 
 		- First segragate left lines and right lines (according to slope)
 		- Used numpy.polyplot to find value which returns slope and intercept after fitting multiple lines
 		- **P.S.** Tried two other methods to achive avg/ extrapolation (explained in improvements)
+
+![alt text][image3]
 
 - Merged that image with my original image to get final output
 ![alt text][image2]
