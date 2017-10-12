@@ -36,15 +36,19 @@ My pipeline consisted of 5 steps :
 	-  First with normal draw lines
 
 ![alt text][image1]
-	-  Then with improved draw lines (draw one single thick line from bottom till center after avg/ extrapolating to detect lane) 
-		- First segragate left lines and right lines (according to slope)
-		- Used numpy.polyplot to find value which returns slope and intercept after fitting multiple lines
-		- **P.S.** Tried two other methods to achive avg/ extrapolation (explained in improvements)
+
+	-  Then with improved draw lines (draw one single thick line from bottom till center after avg/ extrapolating to detect lane)   
+
+		- First segragate left lines and right lines (according to slope)   
+		- Used numpy.polyplot to find value which returns slope and intercept after fitting multiple lines   
+		- **P.S.** Tried two other methods to achive avg/ extrapolation (explained in improvements)   
 
 ![alt text][image3]
 
 - Merged that image with my original image to get final output
+
 ![alt text][image2]
+
 - Did the same with video (multiple images)
 - Stored all the outputs in corresponding output folders
 
