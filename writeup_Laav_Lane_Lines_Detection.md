@@ -12,8 +12,8 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
-
+[image1]: ./test_images_output/test_region_area.png "REGION OF INTEREST"
+[image2]: ./test_images_output/solidYellowCurve2_out.png "LANE DETECTION"
 ---
 
 ### Reflection
@@ -27,6 +27,7 @@ My pipeline consisted of 5 steps :
 - Performed gaussian blur
 - Did Canny Edge detection
 - Assign values to vertices for Region of interest
+![alt text][image1]
 - Apply Hough Transformation on the Region of interest
 - Tweaked the values of kernel size, rho, theta, threshold, min_line_len, max_line_gap (Resultant lines were continous and long)
 - Got an image with lanes drawn on it after calling Hough Transformation
@@ -35,19 +36,14 @@ My pipeline consisted of 5 steps :
 	-  Then with improved draw lines (draw one single thick line from bottom till center after avg/ extrapolating to detect lane) 
 		- First segragate left lines and right lines (according to slope)
 		- Used numpy.polyplot to find value which returns slope and intercept after fitting multiple lines
-		- Tried two other methods to achive avg/ extrapolation (explained in improvements)
+		- **P.S.** Tried two other methods to achive avg/ extrapolation (explained in improvements)
 
 - Merged that image with my original image to get final output
+![alt text][image2]
 - Did the same with video (multiple images)
 - Stored all the outputs in corresponding output folders
 
-ALSO, implemented two
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
-
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
-
-![alt text][image1]
 
 
 ### 2. Identify potential shortcomings with your current pipeline
@@ -65,7 +61,9 @@ A possible improvement would be to detect outliers in the segregated left lane l
 
 Worked on this - 
 
-1. SOLUTION 1 : Used mean and standard deviation on array of segregated slopes to remove outliers and then find the mean after cleaning array of slopes. Stuck at how to find the corresponding value of intercept; in order to use both slope and intercept in calculating x1 and x1 for drawing a line line when we know y1 = bottom most point and y2 = height of centre of image (or region of interest height)
+1. SOLUTION 1 : 
+Used mean and standard deviation on array of segregated slopes to remove outliers and then find the mean after cleaning array of slopes. Stuck at how to find the corresponding value of intercept; in order to use both slope and intercept in calculating x1 and x1 for drawing a line line when we know y1 = bottom most point and y2 = height of centre of image (or region of interest height)
 
-2. SOLUTION 2 : Find the upmost and bottom most x values (we already know the y values ) and draw a line from bottom to up / OR / from bottom to centre of region of interest
+2. SOLUTION 2 : 
+Find the upmost and bottom most x values (we already know the y values ) and draw a line from bottom to up / OR / from bottom to centre of region of interest
    (Working fine, but problem with example.mp4)
