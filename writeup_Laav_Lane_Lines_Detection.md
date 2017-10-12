@@ -34,8 +34,8 @@ My pipeline consisted of 5 steps :
 - Tweaked the values of kernel size, rho, theta, threshold, min_line_len, max_line_gap (Resultant lines were continous and long)
 ![alt text][image3]
 - Got an image with lanes drawn on it after calling Hough Transformation
-	-  First with normal draw lines
-	-  Then with improved draw lines (draw one single thick line from bottom till center after avg/ extrapolating to detect lane)    
+	-  First with normal draw_lines
+	-  Then with draw_lines_improved (draw one single thick line from bottom till center after avg/ extrapolating to detect lane)    
 		-  First segragate left lines and right lines (according to slope)       
 		-  Used numpy.polyplot to find value which returns slope and intercept after fitting multiple lines   
 		-  **P.S.** Tried two other methods to achive avg/ extrapolation (explained in improvements)   
@@ -53,7 +53,7 @@ My pipeline consisted of 5 steps :
 Following are the shortcomings :  
 - When lanes are curved, there is problem in detection
 - If noisy data is present in the region of interest, final lane lines are changed
-- All this is dependent on region of interest; slight changed would need new adjustments, dependent on the positioning of camera on the car
+- All this is dependent on region of interest; slight chang would need new adjustments, dependent on the positioning of camera on the car
 
 
 ### 3. Suggest possible improvements to your pipeline
