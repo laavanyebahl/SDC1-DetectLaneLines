@@ -63,7 +63,8 @@ A possible improvement would be to detect outliers in the segregated left lane l
 Worked on this - 
 
 1. SOLUTION 1 :    
-Used mean and standard deviation on array of segregated slopes to remove outliers and then find the mean after cleaning array of slopes. Stuck at how to find the corresponding value of intercept; in order to use both slope and intercept in calculating x1 and x1 for drawing a line line when we know y1 = bottom most point and y2 = height of centre of image (or region of interest height)
+Used mean and standard deviation on array of segregated slopes to remove outliers and then find the mean after cleaning array of slopes. 
+Stuck at how to find the corresponding value of intercept; in order to use both slope and intercept in calculating x1 and x2 for drawing a line when we know y1 = bottom most point and y2 = height of centre of image (or region of interest height)
 
 2. SOLUTION 2 :    
 Find the upmost and bottom most x values (we already know the y values ) and draw a line from bottom to up / OR / from bottom to centre of region of interest
